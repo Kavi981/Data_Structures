@@ -32,10 +32,22 @@ class Main
         result[n] = ele;
 
         //Insertion at Specific Position
-
+        System.out.println("Enter the Position");
+        int pos = sc.nextInt();
+        int[] result1 = new int[n + 1];
+        for(int i = 0; i < pos; i++)
+        {
+            result1[i] = arr[i];
+        }
+        result1[pos] = ele;
+        for(int i = pos + 1; i < n + 1; i++)
+        {
+            result1[i] = arr[i - 1];
+        }
         //Output
         System.out.println("Insertion at Begining" + Arrays.toString(res));
-        System.out.print("Insertion at End" + Arrays.toString(result));
+        System.out.println("Insertion at End" + Arrays.toString(result));
+        System.out.println("Insertion at Position" + Arrays.toString(result1));
         sc.close();
     }
 }
